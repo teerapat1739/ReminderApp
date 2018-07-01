@@ -4,13 +4,14 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --watch",
     "serve": "live-server public/",
     "dev-server": "webpack-dev-server"
   },
   "dependencies": {
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
     "babel-cli": "6.24.1",
