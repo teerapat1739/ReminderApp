@@ -1,34 +1,25 @@
-import { BrowserRouter, Route, Switch, Link, NavLink } from 'react-router-dom'
 import React from 'react';
-import CreatePage from '../components/CreatePage';
-import EditPage from '../components/EditPage';
-import HomePage from '../components/HomePage';
+import { BrowserRouter, Route, Switch, Link, NavLink } from 'react-router-dom';
 import NotFoundPage from '../components/NotFoundPage';
-import HelpPage from '../components/HelpPage';
-
-const Header = () => (
-    <header>
-        <NavLink exact={true} activeClassName="is-active" to="/">Home</NavLink>
-        <NavLink activeClassName="is-active" to="/create">Create</NavLink>
-        <NavLink activeClassName="is-active" to="/help">Help</NavLink>
-    </header>
-);
-
+import Header from '../components/Header';
+import HomePage from '../components/HomePage';
+import ContactPage from '../components/ContactPage';
+import PortfolioItemPage from '../components/PortfolioItemPage';
+import PortfolioPage from '../components/PortfolioPage';
 
 const AppRouter = () => (
-<BrowserRouter>
+  <BrowserRouter>
     <div>
-        <Header />
-        <Switch>
-            <Route path="/" exact={true} component={HomePage} />
-            <Route path="/create" component={CreatePage} />
-            <Route path="/edit/:id" component={EditPage} />
-            <Route path="/help" component={HelpPage} />
-            <Route component={NotFoundPage} />
-        </Switch>
+      <Header />
+      <Switch>
+        <Route path="/" component={HomePage} exact={true} />
+        <Route path="/portfolio" component={PortfolioPage} exact={true} />
+        <Route path="/portfolio/:id" component={PortfolioItemPage} />
+        <Route path="/contact" component={ContactPage} />
+        <Route component={NotFoundPage} />
+      </Switch>
     </div>
-</BrowserRouter>
+  </BrowserRouter>
 );
-
 
 export default AppRouter;
