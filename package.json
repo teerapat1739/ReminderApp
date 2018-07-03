@@ -9,9 +9,12 @@
     "dev-server": "webpack-dev-server"
   },
   "dependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "babel-cli": "6.24.1",
