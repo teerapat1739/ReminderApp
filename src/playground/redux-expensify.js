@@ -159,8 +159,10 @@ const store = createStore(
 
 store.subscribe(() => {
   const state = store.getState();
+  console.log(state);
+
   const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-  console.log(visibleExpenses);
+  // console.log(visibleExpenses);
 });
 
 const expenseOne = store.dispatch(addExpense({ description: 'Rent', amount: 100, createdAt: -21000 }));
@@ -172,7 +174,7 @@ const expenseTwo = store.dispatch(addExpense({ description: 'Coffee', amount: 30
 // store.dispatch(setTextFilter('ffe'));
 // store.dispatch(setTextFilter());
 
-store.dispatch(sortByAmount());
+// store.dispatch(sortByAmount());
 // store.dispatch(sortByDate());
 
 // store.dispatch(setStartDate(0)); // startDate 125
