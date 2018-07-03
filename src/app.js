@@ -12,8 +12,13 @@ const store = configureStore();
 //const expenseTwo = store.dispatch(addExpense({ description: 'Coffee', amount: 300, createdAt: -1000 }));
 // const expenseOne = store.dispatch(addExpense({ description: 'Rent', amount: 100, createdAt: -21000 }));
 store.dispatch(addExpense({ description: 'Water bill'}));
-store.dispatch(addExpense({ description: 'Gas bill' }))
+store.dispatch(addExpense({ description: 'Gas bill' }));
+store.dispatch(setTextFilter('bill'));
 
 console.log(store.getState());
+const state = store.getState();
+const visbleExpenses = getVisibleExpense(state.expenses, state.filters)
+console.log(visbleExpenses);
+
 
 ReactDOM.render(<AppRouter />, document.getElementById('app'));
